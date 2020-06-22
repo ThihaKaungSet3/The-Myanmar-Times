@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav_graph"
+    app:startDestination="@id/action_today">
+
+        <fragment
+            android:id="@+id/action_today"
+            android:name="non.shahad.today.presentation.fragment.TodayFragment"
+            android:label="TodayFragment" />
+
+        <fragment
+            android:id="@+id/action_foryou"
+            android:name="non.shahad.foryou.presentation.ForYouFragment"
+            android:label="ForYouFragment" />
+        <fragment
+            android:id="@+id/action_section"
+            android:name="non.shahad.section.presentation.SectionFragment"
+            android:label="SectionFragment" />
+
+</navigation>

@@ -11,7 +11,7 @@ android {
     compileSdkVersion(compileSdk)
 
     defaultConfig {
-//        applicationId = Apps.applicationId
+
         minSdkVersion(Apps.minSdk)
         targetSdkVersion(Apps.targetSdk)
 
@@ -42,9 +42,24 @@ android {
 dependencies {
     implementation(project(ModuleDependency.RESOURCE))
     implementation(project(ModuleDependency.CORE))
+    implementation(project(ModuleDependency.NAVIGATION))
+
+    implementation(Libs.RETROFIT)
+    implementation(Libs.MOSHI)
+
+    implementation(Libs.NAV_UI)
+    implementation(Libs.NAV_FRAGMENT_KTX)
+
     implementation(Libs.appcompat)
     implementation(Libs.constraint)
     implementation(Libs.kotlin)
     implementation(Libs.CORE_KTX)
+
+    // Dagger
+    implementation(Libs.DAGGER)
+    implementation(Libs.DAGGER_ANDROID)
+    implementation(Libs.DAGGER_ANDROID_SUPPORT)
+    kapt(Libs.DAGGER_ANNOTATION)
+    kapt(Libs.DAGGER_COMPILER)
 
 }

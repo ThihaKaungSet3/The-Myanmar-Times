@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.fragment_main.*
-import non.shahad.core.fragment.InjectionFragment
+import non.shahad.core.fragment.RegularFragment
 import non.shahad.mmtimes.R
 
-class MainFragment : InjectionFragment() {
+
+class MainFragment : RegularFragment() {
 
     override val layoutRes: Int
         get() = R.layout.fragment_main

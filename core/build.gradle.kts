@@ -42,7 +42,20 @@ dependencies {
     implementation(Libs.appcompat)
     implementation(Libs.constraint)
     implementation(Libs.kotlin)
+
     implementation(Libs.CORE_KTX)
     implementation(Libs.VIEWMODEL_KTX)
+    implementation(Libs.LIFECYCLE_KTX)
+
+    implementation(Libs.TIMBER)
+
+    implementation(Libs.RETROFIT)
+    implementation(Libs.MOSHI)
+
+    implementation(Libs.DAGGER)
+    implementation(Libs.DAGGER_ANDROID)
+    implementation(Libs.DAGGER_ANDROID_SUPPORT)
+    kapt(Libs.DAGGER_ANNOTATION)
+    kapt(Libs.DAGGER_COMPILER)
 
 }

@@ -7,4 +7,5 @@
         android:id="@+id/mainFragment"
         android:name="non.shahad.mmtimes.presentation.MainFragment"
         android:label="MainFragment" />
+
 </navigation>

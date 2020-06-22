@@ -1,22 +1,20 @@
 package non.shahad.section.presentation
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import non.shahad.core.extensions.coreComponent
 import non.shahad.core.fragment.InjectionFragment
 import non.shahad.section.R
+import non.shahad.section.di.DaggerSectionComponent
 
-class SectionFragment : InjectionFragment() {
+class SectionFragment : InjectionFragment<SectionViewModel>() {
 
     override val layoutRes: Int
         get() = R.layout.fragment_section
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(layoutRes,container,false)
+    override fun onInitDI() {
+        DaggerSectionComponent
+            .builder()
+            .coreComponent(activity!!.coreComponent())
+            .build()
+            .inject(this)
     }
 }

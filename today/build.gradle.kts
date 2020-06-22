@@ -11,7 +11,7 @@ android {
     compileSdkVersion(compileSdk)
 
     defaultConfig {
-//        applicationId = Apps.applicationId
+
         minSdkVersion(Apps.minSdk)
         targetSdkVersion(Apps.targetSdk)
 
@@ -28,6 +28,7 @@ android {
         }
 
         getByName(BuildType.DEBUG) {
+            isShrinkResources = false
             isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
         }
 
@@ -36,17 +37,42 @@ android {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
+
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
     }
 }
 
 dependencies {
     implementation(project(ModuleDependency.RESOURCE))
     implementation(project(ModuleDependency.CORE))
+    implementation(project(ModuleDependency.NAVIGATION))
 
     implementation(Libs.appcompat)
     implementation(Libs.MATERIAL)
     implementation(Libs.constraint)
     implementation(Libs.kotlin)
+
     implementation(Libs.CORE_KTX)
+    implementation(Libs.VIEWMODEL_KTX)
+    implementation(Libs.FRAGMENT_KTX)
+
+
+    implementation(Libs.RETROFIT)
+    implementation(Libs.MOSHI)
+
+    implementation(Libs.NAV_UI)
+    implementation(Libs.NAV_FRAGMENT_KTX)
+
+
+    implementation(Libs.DAGGER)
+    implementation(Libs.DAGGER_ANDROID)
+    implementation(Libs.DAGGER_ANDROID_SUPPORT)
+    kapt(Libs.DAGGER_ANNOTATION)
+    kapt(Libs.DAGGER_COMPILER)
+
+    implementation(Libs.ADAPTER_DELEGATE)
+    implementation(Libs.ADAPTER_DELEGATE_BINDING)
 
 }

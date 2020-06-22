@@ -6,4 +6,5 @@ object ModuleDependency {
     const val TODAY = ":today"
     const val CORE = ":core"
     const val RESOURCE = ":resource"
+    const val NAVIGATION = ":navigation"
 }
