@@ -1,6 +1,7 @@
 package non.shahad.mmtimes
 
 import android.app.Application
+import com.facebook.stetho.Stetho
 import non.shahad.core.di.module.ContextModule
 import non.shahad.core.di.component.CoreComponent
 import non.shahad.core.di.component.CoreComponentProvider
@@ -15,7 +16,11 @@ class MMTimesApplication : Application(),
 
     override fun onCreate() {
         super.onCreate()
-        Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+            Stetho.initializeWithDefaults(this)
+        }
+
 
         coreComponent = DaggerCoreComponent
             .builder()

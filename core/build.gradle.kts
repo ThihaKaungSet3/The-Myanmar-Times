@@ -35,6 +35,14 @@ android {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
+
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -42,6 +50,8 @@ dependencies {
     implementation(Libs.appcompat)
     implementation(Libs.constraint)
     implementation(Libs.kotlin)
+    implementation(Libs.MATERIAL)
+    implementation(Libs.LEGACY)
 
     implementation(Libs.CORE_KTX)
     implementation(Libs.VIEWMODEL_KTX)
@@ -51,6 +61,12 @@ dependencies {
 
     implementation(Libs.RETROFIT)
     implementation(Libs.MOSHI)
+
+    implementation(Libs.COIL)
+
+    implementation(Libs.EPOXY)
+    implementation(Libs.EPOXY_DATABINDING)
+    kapt(Libs.EPOXY_ANNOTATION)
 
     implementation(Libs.DAGGER)
     implementation(Libs.DAGGER_ANDROID)

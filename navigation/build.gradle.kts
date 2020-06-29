@@ -41,8 +41,13 @@ android {
 
 dependencies {
 
+    implementation(Libs.kotlin)
+    implementation(Libs.appcompat)
+
     implementation(Libs.NAV_UI)
     implementation(Libs.NAV_FRAGMENT_KTX)
+
+
 
 
 }

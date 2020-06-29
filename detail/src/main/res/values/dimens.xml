@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_title_size_small">20sp</dimen>
+    <dimen name="detail_title_size_medium">24sp</dimen>
+    <dimen name="detail_title_size_large">28sp</dimen>
+
+    <dimen name="detail_summary_size_small">20sp</dimen>
+    <dimen name="detail_summary_size_medium">22sp</dimen>
+    <dimen name="detail_summary_size_large">24sp</dimen>
+
+    <dimen name="caption_size_small">14sp</dimen>
+    <dimen name="caption_size_medium">16sp</dimen>
+    <dimen name="caption_size_large">18sp</dimen>
+
+    <dimen name="content_size_small">18sp</dimen>
+    <dimen name="content_size_medium">20sp</dimen>
+    <dimen name="content_size_large">22sp</dimen>
+</resources>

@@ -42,6 +42,10 @@ android {
             jvmTarget = JavaVersion.VERSION_1_8.toString()
         }
     }
+
+    dataBinding {
+        isEnabled = true
+    }
 }
 
 dependencies {
@@ -78,6 +82,9 @@ dependencies {
     implementation(Libs.DAGGER_ANDROID_SUPPORT)
     kapt(Libs.DAGGER_ANNOTATION)
     kapt(Libs.DAGGER_COMPILER)
+
+    implementation(Libs.STETHO)
+    implementation(Libs.STETHO_OKHTTP)
 
 
 }

@@ -4,4 +4,6 @@
     <string name="today">Today</string>
     <string name="foryou">For you</string>
     <string name="section">Section</string>
+
+    <string name="latest">Latest</string>
 </resources>

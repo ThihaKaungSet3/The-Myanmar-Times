@@ -8,5 +8,6 @@ fun timber(tag: String,msg: String){
     Timber.tag(tag).d(msg)
 }
 
+
 fun Activity.coreComponent() = (applicationContext as? CoreComponentProvider)?.provideCoreComponent()
     ?: throw IllegalStateException("CoreComponentProvider not implemented: $applicationContext")

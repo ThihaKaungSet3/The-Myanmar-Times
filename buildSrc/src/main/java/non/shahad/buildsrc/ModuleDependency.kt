@@ -7,4 +7,5 @@ object ModuleDependency {
     const val CORE = ":core"
     const val RESOURCE = ":resource"
     const val NAVIGATION = ":navigation"
+    const val DETAIL = ":detail"
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CommonToolbarTitle">
+        <item name="android:fontFamily">@font/sans_black_familu</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/toolbar_textsize_medium</item>
+        <item name="android:layout_marginStart">8dp</item>
+    </style>
+
+    <style name="CommonToolbarBackBtn">
+        <item name="android:padding">16dp</item>
+        <item name="android:tint">@color/dim_gray</item>
+    </style>
+</resources>

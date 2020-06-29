@@ -5,6 +5,7 @@ plugins{
     id(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.kotlinAndroidExtension)
     id(BuildPlugins.kotlinKapt)
+    id(BuildPlugins.butterKnife)
 }
 
 android {
@@ -41,6 +42,15 @@ android {
         kotlinOptions {
             jvmTarget = JavaVersion.VERSION_1_8.toString()
         }
+
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    kapt {
+        correctErrorTypes = true
     }
 }
 
@@ -48,6 +58,7 @@ dependencies {
     implementation(project(ModuleDependency.RESOURCE))
     implementation(project(ModuleDependency.CORE))
     implementation(project(ModuleDependency.NAVIGATION))
+    implementation(project(ModuleDependency.DETAIL))
 
     implementation(Libs.appcompat)
     implementation(Libs.MATERIAL)
@@ -58,13 +69,15 @@ dependencies {
     implementation(Libs.VIEWMODEL_KTX)
     implementation(Libs.FRAGMENT_KTX)
 
-
     implementation(Libs.RETROFIT)
     implementation(Libs.MOSHI)
 
     implementation(Libs.NAV_UI)
     implementation(Libs.NAV_FRAGMENT_KTX)
 
+    implementation(Libs.EPOXY)
+    implementation(Libs.EPOXY_DATABINDING)
+    kapt(Libs.EPOXY_ANNOTATION)
 
     implementation(Libs.DAGGER)
     implementation(Libs.DAGGER_ANDROID)
@@ -72,7 +85,13 @@ dependencies {
     kapt(Libs.DAGGER_ANNOTATION)
     kapt(Libs.DAGGER_COMPILER)
 
-    implementation(Libs.ADAPTER_DELEGATE)
-    implementation(Libs.ADAPTER_DELEGATE_BINDING)
+    implementation(Libs.ROOM)
+    implementation(Libs.ROOM_COMPILER)
+    kapt(Libs.ROOM_KTX)
+
+    implementation(Libs.COIL)
+
+    implementation(Libs.STORE)
+
 
 }

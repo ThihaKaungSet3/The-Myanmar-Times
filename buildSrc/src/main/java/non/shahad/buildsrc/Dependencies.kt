@@ -7,6 +7,7 @@ object Apps {
     const val versionCode = 1
     const val versionName = "1.0"
     const val TEST_INSTRUMENTATION_RUNNER = "android.support.test.runner.AndroidJUnitRunner"
+
 }
 
 
@@ -21,6 +22,8 @@ object BuildPlugins {
     const val kotlinAndroidExtension = "kotlin-android-extensions"
     const val kotlinKapt = "kotlin-kapt"
     const val daggerHilt = "dagger.hilt.android.plugin"
+    const val butterKnife = "com.jakewharton.butterknife"
+    const val butterKnifeGradle = "com.jakewharton:butterknife-gradle-plugin:${Versions.butterKnifeGradle}"
 }
 
 interface BuildType {
@@ -44,7 +47,9 @@ object BuildTypeRelease : BuildType {
 
 object Versions {
     const val kotlin = "1.3.61"
+    const val butterKnifeGradle = "10.1.0"
     const val gradle = "4.0.0-alpha09"
+
     const val appcompat = "1.1.0"
     const val constraint = "1.1.3"
 
@@ -70,7 +75,22 @@ object Versions {
 
     const val timber = "4.7.1"
 
+    // Adapter Delegate
     const val adapterDelegate = "4.3.0"
+
+    // Coil
+    const val coil = "0.11.0"
+
+    // Epoxy
+    const val epoxy = "4.0.0-beta4"
+
+    // Store
+    const val store = "4.0.0-alpha06"
+
+    const val room = "2.2.5"
+
+    // Stetho
+    const val stetho = "1.5.1"
 }
 
 object Libs {
@@ -119,5 +139,24 @@ object Libs {
     // Adapter delegate
     const val ADAPTER_DELEGATE = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Versions.adapterDelegate}"
     const val ADAPTER_DELEGATE_BINDING = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapterDelegate}"
+
+    // Epoxy
+    const val EPOXY = "com.airbnb.android:epoxy:${Versions.epoxy}"
+    const val EPOXY_DATABINDING = "com.airbnb.android:epoxy-databinding:${Versions.epoxy}"
+    const val EPOXY_ANNOTATION = "com.airbnb.android:epoxy-processor:${Versions.epoxy}"
+
+    // Store
+    const val STORE = "com.dropbox.mobile.store:store4:${Versions.store}"
+
+    // Stetho
+    const val STETHO = "com.facebook.stetho:stetho:${Versions.stetho}"
+    const val STETHO_OKHTTP = "com.facebook.stetho:stetho-okhttp3:${Versions.stetho}"
+
+    const val ROOM = "androidx.room:room-runtime:${Versions.room}"
+    const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.room}"
+    const val ROOM_KTX = "androidx.room:room-ktx:${Versions.room}"
+
+    // Coil
+    const val COIL = "io.coil-kt:coil:${Versions.coil}"
 
 }

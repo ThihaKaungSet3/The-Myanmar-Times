@@ -5,5 +5,22 @@
     <dimen name="design_bottom_navigation_active_text_size"
         tools:override="true">12sp</dimen>
 
+    <dimen name="banner_title_text_size">28sp</dimen>
+    <dimen name="banner_image_height">264dp</dimen>
+    <dimen name="banner_date_text_size">12sp</dimen>
+
+    <dimen name="common_divider_height">1dp</dimen>
+
+    <dimen name="latest_news_parent_title">14sp</dimen>
+
+    <dimen name="regional_card_news_title">24sp</dimen>
+    <dimen name="regional_card_news_description">16sp</dimen>
+    <dimen name="regional_card_news_image">250dp</dimen>
+
+    <dimen name="toolbar_textsize_medium">20sp</dimen>
+
+
+
+
 
 </resources>
