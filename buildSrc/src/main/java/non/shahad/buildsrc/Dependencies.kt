@@ -83,6 +83,7 @@ object Versions {
 
     // Epoxy
     const val epoxy = "4.0.0-beta4"
+    const val epoxy_paging = "2.18.0"
 
     // Store
     const val store = "4.0.0-alpha06"
@@ -144,6 +145,7 @@ object Libs {
     const val EPOXY = "com.airbnb.android:epoxy:${Versions.epoxy}"
     const val EPOXY_DATABINDING = "com.airbnb.android:epoxy-databinding:${Versions.epoxy}"
     const val EPOXY_ANNOTATION = "com.airbnb.android:epoxy-processor:${Versions.epoxy}"
+    const val EPOXY_PAGIN = "com.airbnb.android:epoxy-paging:${Versions.epoxy_paging}"
 
     // Store
     const val STORE = "com.dropbox.mobile.store:store4:${Versions.store}"

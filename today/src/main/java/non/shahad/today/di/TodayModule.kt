@@ -19,11 +19,12 @@ internal class TodayModule(
     val fragment: TodayFragment
 ) {
 
-
         @TodayScope
         @Provides
         fun provideTodayService(retrofit: Retrofit) : TodayService {
-            return retrofit.create(TodayService::class.java)
+            return retrofit
+                .create(TodayService::class.java)
+
         }
 
         @TodayScope

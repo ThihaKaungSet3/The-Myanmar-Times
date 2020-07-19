@@ -1,8 +1,8 @@
-package non.shahad.today.domain.exts
+package non.shahad.core.store
 
 interface RefreshPolicy {
     /**
-     * Returns whether the store should fetch data from the network at the start of the stream.
+     * Returns whether the store should fetch data .from the network at the start of the stream
      * @param refreshScope a string that represents a specific data set whose refresh policy
      * the consumer is concerned with.
      */

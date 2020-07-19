@@ -11,16 +11,13 @@ import non.shahad.today.domain.model.TodayDomainModel
  * Should make data enums on my own
  */
 internal data class TodayResponse (
-    @field:Json(name = "banner")
-    val banner: List<NewsDataModel>?,
-    @field:Json(name = "latest_news")
-    val latestNews: List<NewsDataModel>?
+    @field:Json(name = "data")
+    val latestNews: List<NewsDataModel>
 )
 
 internal fun TodayResponse.toDomainModel(): TodayDomainModel {
     return TodayDomainModel(
-        bannerNews = this.banner?.map { it.toDomainModel() },
-        latestNews = this.latestNews?.map { it.toDomainModel() }
+        latestNews = this.latestNews.map { it.toDomainModel() }
     )
 }
 

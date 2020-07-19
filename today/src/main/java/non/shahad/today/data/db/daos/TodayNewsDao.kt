@@ -10,8 +10,14 @@ internal abstract class TodayNewsDao {
     @Query("SELECT * FROM today_news WHERE page = :page")
     abstract fun getNewsByPage(page: Int): Flow<List<NewsEntity>>
 
+    @Query("SELECT * FROM today_news WHERE category_name = :name")
+    abstract fun getLatestNews(name: String): Flow<List<NewsEntity>>
+
     @Query("DELETE FROM today_news WHERE id = :page")
     abstract fun clearNewsByPage(page: Int)
+
+    @Query("DELETE FROM today_news WHERE category_name = :name")
+    abstract fun clearNewsByName(name: String)
 
     @Query("DELETE FROM today_news")
     abstract suspend fun deleteAll()
@@ -20,13 +26,12 @@ internal abstract class TodayNewsDao {
     internal abstract fun insertNews(news: List<NewsEntity>)
 
     @Transaction
-    suspend fun insertMappedNews(page: Int,category: String,news: List<NewsEntity>){
+    open fun insertMappedNews(page: Int,news: List<NewsEntity>){
         clearNewsByPage(page)
 
-        val feeds  = news.mapIndexed { index, newsEntity ->
+        val feeds  = news.mapIndexed { _, newsEntity ->
             newsEntity.also {
                 it.page = page
-                it.categoryName = category
             }
         }
 
@@ -34,5 +39,17 @@ internal abstract class TodayNewsDao {
 
     }
 
+    @Transaction
+    open fun insertLatestNews(news: List<NewsEntity>){
+        clearNewsByName("latest")
+
+        val feeds = news.mapIndexed { _, newsEntity ->
+            newsEntity.also {
+                it.categoryName = "latest"
+            }
+        }
+
+        insertNews(feeds)
+    }
 
 }

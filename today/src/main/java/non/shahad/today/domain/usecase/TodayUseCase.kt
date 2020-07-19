@@ -1,5 +1,7 @@
 package non.shahad.today.domain.usecase
 
+import com.dropbox.android.external.store4.StoreResponse
+import kotlinx.coroutines.flow.Flow
 import non.shahad.today.domain.model.NewsDomainModel
 import non.shahad.today.domain.model.TodayDomainModel
 import non.shahad.today.domain.repository.TodayRepository
@@ -13,11 +15,19 @@ class TodayUseCase @Inject constructor(
     private val todayRepository: TodayRepository
 ) {
 
-    suspend fun fetchLatestNews(page: Int): TodayDomainModel {
-        return todayRepository.fetchLatestNews(page)
+    suspend fun fetchFreshLatestNews(): List<NewsDomainModel> {
+        return todayRepository.fetchLatestNews()
     }
 
-    suspend fun fetchNewsByCategory(page: Int): List<NewsDomainModel>{
-        return todayRepository.streamNewsByCategory(page)
+    fun streamLatestNews(): Flow<StoreResponse<List<NewsDomainModel>>>{
+        return todayRepository.streamLatestNews()
+    }
+
+    fun streamNewsByCategory(page: Int): Flow<StoreResponse<List<NewsDomainModel>>>{
+        return todayRepository.streamNewsByCategoryPage(page)
+    }
+
+    suspend fun fetchFreshNewsByCategory(page: Int): List<NewsDomainModel>{
+        return todayRepository.fetchNewsByCategoryPage(page)
     }
 }

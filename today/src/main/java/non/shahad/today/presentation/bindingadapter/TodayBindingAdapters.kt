@@ -12,7 +12,7 @@ fun bindNewsImage(imageView: ImageView, imgUrls: ImgDomainModel?){
             imageView.load(imgUrls.large)
             return
         }
-        imageView.load(imgUrls.default)
+        imageView.load("https://www.mmtimes.com/sites/mmtimes.com/files/styles/mmtimes_ratio_c_three_col/public/default_images/sample-page-02_2_0.jpg")
     }
 
 

@@ -20,7 +20,6 @@ internal interface TodayService {
     @GET(LATEST_NEWS)
     suspend fun fetchLatestNews() : TodayResponse
 
-
     @GET(NEWS_BY_CATEGORY)
     suspend fun fetchNewsByCategory(
         @Path(NEWS_CATEGORY_PARAM)page: Int

@@ -1,15 +1,13 @@
 package non.shahad.today.data.db.entities
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 import non.shahad.today.data.model.ImgDataModel
 import non.shahad.today.data.model.NewsDataModel
 import non.shahad.today.data.model.toDomainModel
 import non.shahad.today.domain.model.NewsDomainModel
 
 @Entity(tableName = "today_news")
-internal data class NewsEntity (
+internal data class NewsEntity @JvmOverloads constructor(
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: String,
@@ -17,8 +15,8 @@ internal data class NewsEntity (
     val title: String,
     @ColumnInfo(name = "link")
     val link: String,
-    @ColumnInfo(name = "img_url")
-    val imgUrls : ImgDataModel?,
+    @Embedded
+    val imgUrls : ImgDataModel? = null,
     @ColumnInfo(name = "description")
     val description: String?,
     @ColumnInfo(name = "date_time")
@@ -31,7 +29,9 @@ internal data class NewsEntity (
     var page: Int = -1,
     @ColumnInfo(name = "category_name")
     var categoryName: String = ""
-)
+){
+
+}
 
 internal fun NewsEntity.toDomainModel() : NewsDomainModel {
     return NewsDomainModel(

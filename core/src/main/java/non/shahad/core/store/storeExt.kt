@@ -1,4 +1,5 @@
-package non.shahad.today.domain.exts
+package non.shahad.core.store
+
 
 import com.dropbox.android.external.store4.ResponseOrigin
 import com.dropbox.android.external.store4.Store
@@ -9,6 +10,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onEach
+import non.shahad.core.store.RefreshPolicy
+import non.shahad.core.store.RefreshScope
 
 /**
  * Returns a [Flow] of [StoreResponse] with the [StoreRequest.cached] request, using [refreshPolicy]
@@ -20,7 +23,7 @@ inline fun <reified Key : Any, reified Output : Any> Store<Key, Output>.streamWi
     refreshPolicy: RefreshPolicy
 ): Flow<StoreResponse<Output>> {
     val refreshScope = getRefreshScope<Key, Output>(key)
-    return flow { emit(refreshPolicy.shouldRefresh(refreshScope)) }
+    return kotlinx.coroutines.flow.flow { emit(refreshPolicy.shouldRefresh(refreshScope)) }
         .flatMapConcat { shouldRefresh ->
             stream(StoreRequest.cached(key, refresh = shouldRefresh))
         }

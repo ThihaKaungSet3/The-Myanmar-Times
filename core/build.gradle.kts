@@ -68,6 +68,11 @@ dependencies {
     implementation(Libs.EPOXY_DATABINDING)
     kapt(Libs.EPOXY_ANNOTATION)
 
+    implementation(Libs.STORE)
+
+    implementation(Libs.STETHO)
+    implementation(Libs.STETHO_OKHTTP)
+    
     implementation(Libs.DAGGER)
     implementation(Libs.DAGGER_ANDROID)
     implementation(Libs.DAGGER_ANDROID_SUPPORT)

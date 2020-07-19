@@ -43,9 +43,10 @@ android {
         }
     }
 
-    dataBinding {
-        isEnabled = true
+    buildFeatures {
+        dataBinding = true
     }
+
 }
 
 dependencies {
@@ -82,6 +83,10 @@ dependencies {
     implementation(Libs.DAGGER_ANDROID_SUPPORT)
     kapt(Libs.DAGGER_ANNOTATION)
     kapt(Libs.DAGGER_COMPILER)
+
+    implementation(Libs.ROOM)
+    kapt(Libs.ROOM_COMPILER)
+    implementation(Libs.ROOM_KTX)
 
     implementation(Libs.STETHO)
     implementation(Libs.STETHO_OKHTTP)

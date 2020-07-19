@@ -77,6 +77,7 @@ dependencies {
 
     implementation(Libs.EPOXY)
     implementation(Libs.EPOXY_DATABINDING)
+    implementation(Libs.EPOXY_PAGIN)
     kapt(Libs.EPOXY_ANNOTATION)
 
     implementation(Libs.DAGGER)
@@ -86,10 +87,11 @@ dependencies {
     kapt(Libs.DAGGER_COMPILER)
 
     implementation(Libs.ROOM)
-    implementation(Libs.ROOM_COMPILER)
-    kapt(Libs.ROOM_KTX)
+    kapt(Libs.ROOM_COMPILER)
+    implementation(Libs.ROOM_KTX)
 
     implementation(Libs.COIL)
+
 
     implementation(Libs.STORE)
 

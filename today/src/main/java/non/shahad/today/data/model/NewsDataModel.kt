@@ -28,7 +28,7 @@ internal fun NewsDataModel.toEntity() : NewsEntity {
         id = this.id,
         title = this.title,
         link = this.link,
-        imgUrls = this.imgUrls,
+        imgUrls = imgUrls,
         description = this.description,
         dateTime = this.dateTime,
         tags = this.tags,
