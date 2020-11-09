@@ -63,6 +63,7 @@ dependencies {
     implementation(Libs.MOSHI)
 
     implementation(Libs.COIL)
+    implementation(Libs.RX_CALL_ADAPTER)
 
     implementation(Libs.EPOXY)
     implementation(Libs.EPOXY_DATABINDING)

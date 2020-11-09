@@ -9,7 +9,7 @@ plugins{
 }
 
 android {
-    compileSdkVersion(compileSdk)
+    compileSdkVersion(Apps.compileSdk)
 
     defaultConfig {
 
@@ -70,15 +70,20 @@ dependencies {
     implementation(Libs.FRAGMENT_KTX)
 
     implementation(Libs.RETROFIT)
+    implementation(Libs.RX_CALL_ADAPTER)
     implementation(Libs.MOSHI)
 
     implementation(Libs.NAV_UI)
     implementation(Libs.NAV_FRAGMENT_KTX)
 
+    implementation(Libs.RXJAVA)
+
     implementation(Libs.EPOXY)
     implementation(Libs.EPOXY_DATABINDING)
     implementation(Libs.EPOXY_PAGIN)
     kapt(Libs.EPOXY_ANNOTATION)
+
+    implementation(Libs.TIMBER)
 
     implementation(Libs.DAGGER)
     implementation(Libs.DAGGER_ANDROID)
@@ -87,6 +92,7 @@ dependencies {
     kapt(Libs.DAGGER_COMPILER)
 
     implementation(Libs.ROOM)
+    implementation(Libs.ROOM_RX)
     kapt(Libs.ROOM_COMPILER)
     implementation(Libs.ROOM_KTX)
 

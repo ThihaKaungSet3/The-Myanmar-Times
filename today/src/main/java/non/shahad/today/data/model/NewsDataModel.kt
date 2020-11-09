@@ -5,46 +5,40 @@ import non.shahad.today.data.db.entities.NewsEntity
 import non.shahad.today.domain.model.NewsDomainModel
 
 internal data class NewsDataModel(
-    @field:Json(name = "id")
+    @field:Json(name = "_id")
     val id: String,
     @field:Json(name = "title")
     val title: String,
-    @field:Json(name = "link")
-    val link: String,
-    @field:Json(name = "img_url")
-    val imgUrls : ImgDataModel?,
+    @field:Json(name = "imgUrl")
+    val imgUrl : String,
     @field:Json(name = "description")
     val description: String?,
     @field:Json(name = "date_time")
     val dateTime: String?,
-    @field:Json(name = "tags")
-    val tags: List<String>?,
-    @field:Json(name = "type")
-    val type: String
+    @field:Json(name = "category")
+    val categoryName: String
 )
 
 internal fun NewsDataModel.toEntity() : NewsEntity {
     return NewsEntity(
         id = this.id,
         title = this.title,
-        link = this.link,
-        imgUrls = imgUrls,
+        imgUrl = this.imgUrl,
         description = this.description,
         dateTime = this.dateTime,
-        tags = this.tags,
-        type = this.type
+        categoryName = this.categoryName,
+        lastUpdated = 0L
     )
 }
 
 internal fun NewsDataModel.toDomainModel() : NewsDomainModel {
     return NewsDomainModel(
-        id = this.id,
-        title = this.title,
-        link = this.link,
-        imgUrls = this.imgUrls?.toDomainModel(),
-        description = this.description,
-        dateTime = this.dateTime,
-        tags = this.tags,
-        type = this.type
+            id = this.id,
+            title = this.title,
+            imgUrl = this.imgUrl,
+            description = this.description,
+            dateTime = this.dateTime,
+            categoryName = this.categoryName,
+            lastUpdated = 0L
     )
 }

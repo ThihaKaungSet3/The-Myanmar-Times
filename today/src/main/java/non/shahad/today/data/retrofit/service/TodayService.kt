@@ -1,9 +1,11 @@
 package non.shahad.today.data.retrofit.service
 
+import io.reactivex.Observable
+import io.reactivex.Single
+import non.shahad.today.data.retrofit.response.HeadlineResponse
 import non.shahad.today.data.retrofit.response.NewsByCategoryResponse
-import non.shahad.today.data.retrofit.response.TodayResponse
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 
 /**
  * Should be internal
@@ -12,16 +14,18 @@ internal interface TodayService {
 
     companion object {
         const val NEWS_CATEGORY_PARAM = "page"
+        const val CATEGORY_PARAM = "category"
 
-        const val LATEST_NEWS = "latest"
-        const val NEWS_BY_CATEGORY = "category/{$NEWS_CATEGORY_PARAM}"
+        const val HEADLINE_NEWS = "news/headlines"
+        const val NEWS_BY_CATEGORY = "news"
     }
 
-    @GET(LATEST_NEWS)
-    suspend fun fetchLatestNews() : TodayResponse
+    @GET(HEADLINE_NEWS)
+    fun fetchHeadlinesNews() : Observable<HeadlineResponse>
 
     @GET(NEWS_BY_CATEGORY)
     suspend fun fetchNewsByCategory(
-        @Path(NEWS_CATEGORY_PARAM)page: Int
-    ) : NewsByCategoryResponse
+        @Query(NEWS_CATEGORY_PARAM)page: Int,
+        @Query(CATEGORY_PARAM) category: String
+    ) : Observable<NewsByCategoryResponse>
 }

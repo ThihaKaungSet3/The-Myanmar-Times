@@ -5,6 +5,8 @@ import non.shahad.today.data.model.NewsDataModel
 
 internal data class NewsByCategoryResponse(
     val title: String,
-    @field:Json(name = "data")
-    val data: List<NewsDataModel>
+    @field:Json(name = "result")
+    val data: List<NewsDataModel>,
+    val total: Int,
+    val pages: Int
 )

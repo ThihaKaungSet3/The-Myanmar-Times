@@ -11,7 +11,7 @@ import non.shahad.today.data.db.entities.NewsEntity
 @Database(
     entities = [NewsEntity::class],
     exportSchema = false,
-    version = 1
+    version = 2
 )
 @TypeConverters(StringToListConverter::class)
 internal abstract class TodayDatabase: RoomDatabase() {

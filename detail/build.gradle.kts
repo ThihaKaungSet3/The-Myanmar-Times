@@ -10,7 +10,7 @@ plugins{
 }
 
 android {
-    compileSdkVersion(compileSdk)
+    compileSdkVersion(Apps.compileSdk)
 
     defaultConfig {
 

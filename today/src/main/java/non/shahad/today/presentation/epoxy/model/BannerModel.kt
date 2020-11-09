@@ -21,7 +21,6 @@ abstract class BannerModel: DataBindingModel<BannerItemBinding>(){
 
     override fun bind(binding: BannerItemBinding, context: Context) {
         binding.news = banner
-        binding.root.setOnClickListener {onClick(banner.link)  }
     }
 
     override fun unbind(binding: BannerItemBinding) {

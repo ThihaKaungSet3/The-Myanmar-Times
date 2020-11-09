@@ -33,7 +33,6 @@
 
         <ImageView
             android:id="@+id/imageView"
-            bindNewsImage="@{news.imgUrls}"
             android:layout_width="0dp"
             android:layout_height="@dimen/banner_image_height"
             android:layout_marginStart="16dp"

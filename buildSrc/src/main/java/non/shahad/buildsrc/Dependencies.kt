@@ -48,7 +48,7 @@ object BuildTypeRelease : BuildType {
 object Versions {
     const val kotlin = "1.3.61"
     const val butterKnifeGradle = "10.1.0"
-    const val gradle = "4.0.0-alpha09"
+    const val gradle = "4.1.0"
 
     const val appcompat = "1.1.0"
     const val constraint = "1.1.3"
@@ -71,7 +71,10 @@ object Versions {
     const val hilt = "2.28-alpha"
     const val hilt_viewmodel = "1.0.0-alpha01"
 
+    const val RxJava = "2.2.20"
+
     const val retrofit = "2.7.1"
+
 
     const val timber = "4.7.1"
 
@@ -130,11 +133,14 @@ object Libs {
     const val DAGGER_ANDROID_SUPPORT = "com.google.dagger:dagger-android-support:${Versions.DAGGER}"
     const val DAGGER_ANNOTATION = "com.google.dagger:dagger-android-processor:${Versions.DAGGER}"
 
+    const val RXJAVA = "io.reactivex.rxjava2:rxjava:${Versions.RxJava}"
+
     // Timber
     const val TIMBER = "com.jakewharton.timber:timber:${Versions.timber}"
 
     // Retrofit
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val RX_CALL_ADAPTER = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
     const val MOSHI = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
 
     // Adapter delegate
@@ -155,6 +161,7 @@ object Libs {
     const val STETHO_OKHTTP = "com.facebook.stetho:stetho-okhttp3:${Versions.stetho}"
 
     const val ROOM = "androidx.room:room-runtime:${Versions.room}"
+    const val ROOM_RX = "androidx.room:room-rxjava2:${Versions.room}"
     const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.room}"
     const val ROOM_KTX = "androidx.room:room-ktx:${Versions.room}"
 
